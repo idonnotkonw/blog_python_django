@@ -1,0 +1,39 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>欢迎登陆</title>
+		<script type="text/javascript">
+			function Show_Hidden(trid){
+				if(trid.style.display=="block"){
+					trid.style.display='none';
+				}else{
+					trid.style.display='block';
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h1>{{username}},欢迎登陆xx博客</h1>
+		你可以：
+		
+			<a href='/add/'>写一篇博文</a>
+			<a href='/logout/'>点此退出</a>
+			<br/>
+			{% for item in data %}
+				<h2>
+					题目：{{item.headline}}作者：{{item.author}}
+				</h2>
+				<br/>
+				<p >
+					{{item.text}}	
+				</p>
+				<br/>
+				
+			{% endfor %}
+			<div>一共{{count}}条</div>
+			<div>{{page}}</div>
+
+	</body>
+</html>
